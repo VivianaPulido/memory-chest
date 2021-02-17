@@ -1,0 +1,19 @@
+<h3>Edit this Memory</h3>
+<form action='/edit/{{id}}' method='POST' enctype='multipart/form-data'>
+
+<label for="-title-input">Title:</label>
+<input type="text" name="title" id="title-input" value="{{this.title}}"/><br>
+
+<img src="{{this.imgPath}}" alt="current image"/><br>
+<p>Current Image</p><br>
+
+<label for="-image-input">New Image</label>
+<input type="file" name="image" id="image-input"/><br>
+
+<label for="-description-input">Description:</label>
+<textarea type="text" name="description" id="description-input">{{this.description}}</textarea><br>
+
+
+<input type="submit" value="Save Changes"/>
+
+</form>

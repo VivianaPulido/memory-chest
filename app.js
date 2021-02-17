@@ -12,7 +12,7 @@ const uploadCloud = require('./configs/cloudinary');
 
 
 mongoose
-  .connect('mongodb://localhost/memory-chest', {useNewUrlParser: true})
+  .connect('mongodb://localhost/memory-chest', {useNewUrlParser: true, useUnifiedTopology: true})
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
@@ -50,7 +50,7 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 
 // default value for title local
-app.locals.title = 'Express - Generated with IronGenerator';
+//app.locals.title = 'Express - Generated with IronGenerator';
 
 
 

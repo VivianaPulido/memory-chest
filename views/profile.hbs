@@ -1,17 +1,24 @@
-{{#if userInSession}}
-<h1>{{userInSession.username}}'s Memories Chest</h1>
+{{!-- {{#if foundUser}} --}}
+<h1>{{this.username}}'s Memories Chest</h1>
 <a href="/create-memory">Create a Memory</a>
 
-{{#each userInSession.memories}}
-<img src="{{userInSession.memories.imgPath}}" alt="{{userInSession.memories.imgName}}"/>
-<h3>{{userInSession.memories.title}}</h3>
-<p>{{userInSession.memories.description}}</p>
-<a href="/edit">Edit</a>
-<a href="/delete">Delete</a>
+{{#each this.memories}}
+<img src="{{imgPath}}" alt="{{imgName}}"/>
+<a href="/detail/{{id}}"><h3>{{title}}</h3></a>
+{{!-- <p>{{description}}</p> --}}
+
+<a href="/detail/{{id}}">See</a>
+
+<a href="/edit/{{_id}}">Edit</a>
+
+<form action="/delete/{{id}}" method="POST">
+<button>Delete</button>
+</form>
+
 {{/each}}
 
-{{/if}}
+{{!-- {{/if}} --}}
 
-{{#unless userInSession}}
+{{!-- {{#unless userInSession}}
 To create Memories please register or login.
-{{/unless}}
+{{/unless}} --}}

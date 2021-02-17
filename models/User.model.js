@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose');
+const Memory= require('./Memory.model')
 
 
 const userSchema = new Schema({
@@ -12,7 +13,7 @@ const userSchema = new Schema({
     trim: true
     },  
   password: String,
-  memories: [{type: this.schema.Types.ObjectId, ref: "Memory"}]
+  memories: [{type: Schema.Types.ObjectId, ref: "Memory"}]
 },
 {
   timestamps: true

@@ -11,7 +11,7 @@ module.exports = app => {
       cookie: {
         sameSite: false,
         httpOnly: true,
-        maxAge: 60000
+        maxAge: 86400000
       },
       store: new MongoStore({
         mongooseConnection: mongoose.connection,

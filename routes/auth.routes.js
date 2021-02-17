@@ -64,7 +64,7 @@ router.get('/login', (req, res, next) => {
 
 //Post de Login (procesa los datos del formulario que nos da el usuario)
 router.post('/login', async (req, res, next) => {
-  console.log('SESSION =====> ', req.session);
+  //console.log('SESSION =====> ', req.session);
   const {email, password} = req.body
 
   if (email === '' || password === '') {
@@ -89,14 +89,14 @@ router.post('/login', async (req, res, next) => {
   }
 })
 
-//Get profile
-router.get('/profile', (req, res, next) => {
-  const userInSession= req.session.currentUser
-  console.log("este es", userInSession)
-  res.render('profile', {userInSession: req.session.currentUser})
-})
+// //Get profile
+// router.get('/profile', (req, res, next) => {
+//   const userInSession= req.session.currentUser
+//   //console.log("este es", userInSession)
+//   res.render('profile', {userInSession: req.session.currentUser})
+// })
 
-//POst logout
+//Post logout
 router.post('/logout', (req, res) => {
   req.session.destroy();
   res.redirect('/');
