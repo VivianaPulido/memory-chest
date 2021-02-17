@@ -89,12 +89,6 @@ router.post('/login', async (req, res, next) => {
   }
 })
 
-// //Get profile
-// router.get('/profile', (req, res, next) => {
-//   const userInSession= req.session.currentUser
-//   //console.log("este es", userInSession)
-//   res.render('profile', {userInSession: req.session.currentUser})
-// })
 
 //Post logout
 router.post('/logout', (req, res) => {

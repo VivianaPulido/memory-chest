@@ -20,7 +20,7 @@ cloudinary.config({
 
 const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
-  folder: 'samples', // The name of the folder in cloudinary
+  folder: 'memory-chest', // The name of the folder in cloudinary
   allowedFormats: ['jpg', 'png'],
   params: { resource_type: 'raw' },
   filename: function (req, file, cb) {

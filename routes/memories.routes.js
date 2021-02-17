@@ -47,16 +47,20 @@ router.get('/edit/:id', async(req, res, next) => {
   res.render('edit', foundMemory)
 })
 
-//post edit memory
+//post edit memory >> funciona pero tengo que pasar todos los campos
 router.post('/edit/:id', uploadCloud.single('image'), async(req, res, next) => {
   const {title, description}= req.body
-  const imgPath= req.file.path
-  const imgName= req.file.originalname
+  
   const id= req.params.id
 
-  const memoryChanges= await Memory.findByIdAndUpdate(id, {title, imgName, imgPath, description})
-  console.log('Estos son los cambios:', memoryChanges)
-  
+  if(!req.file){
+    const memoryChanges= await Memory.findByIdAndUpdate(id, {$set:{title, description}}) 
+  }else{
+    const imgPath= req.file.path
+    const imgName= req.file.originalname
+    const memoryChanges= await Memory.findByIdAndUpdate(id, {$set:{title, imgName, imgPath, description}})
+    //console.log('Estos son los cambios:', memoryChanges)
+  }
   res.redirect('/profile')
 })
 
@@ -64,13 +68,14 @@ router.post('/edit/:id', uploadCloud.single('image'), async(req, res, next) => {
 //get profile 
 router.get('/profile', async(req, res, next) => {
   const userInSession= req.session.currentUser
-  
+  console.log(req.sesseion)
   const userId= req.session.currentUser._id
   const foundUser= await User.findById(userId).populate('memories')
   //console.log('esto es foundUser', foundUser)
 
   res.render('profile', foundUser)
 })
+
 
 //get ver detalles de las memories
 router.get('/detail/:id', async(req, res, next) => {

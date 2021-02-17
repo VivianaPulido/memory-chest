@@ -10,15 +10,28 @@ const logger       = require('morgan');
 const path         = require('path');
 const uploadCloud = require('./configs/cloudinary');
 
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://vivianapulido:holamundo@cluster0.uxrkm.mongodb.net/memory-chest'
 
 mongoose
-  .connect('mongodb://localhost/memory-chest', {useNewUrlParser: true, useUnifiedTopology: true})
-  .then(x => {
-    console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
+  .connect(MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true
   })
-  .catch(err => {
-    console.error('Error connecting to mongo', err)
+  .then(() => console.log(`Successfully connected to the database ${MONGODB_URI}`))
+  .catch(error => {
+    console.error(`An error ocurred trying to connect to the database ${MONGODB_URI}: `, error);
+    process.exit(1);
   });
+
+// mongoose
+//   .connect('mongodb://localhost/memory-chest', {useNewUrlParser: true, useUnifiedTopology: true})
+//   .then(x => {
+//     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
+//   })
+//   .catch(err => {
+//     console.error('Error connecting to mongo', err)
+//   });
 
 const app_name = require('./package.json').name;
 const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.')[0]}`);
