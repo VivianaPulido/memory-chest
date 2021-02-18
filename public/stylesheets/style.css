@@ -1,0 +1,78 @@
+/* gris de outlines y placeholders rgb(209, 213, 219); 
+indigo botones rgba(99, 102, 241)
+*/
+
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+
+  #landing{
+    background-image: url(../images/vintage-collection.jpg);
+    background-repeat: no-repeat;
+    background-size: 100vw;
+  }
+
+  .titleshadow{
+    text-shadow: 2px 2px 5px #181818;
+    
+  }
+
+  .profileHead{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+
+  .createForm{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+  }
+
+  .custom-file-input::-webkit-file-upload-button {
+    visibility: hidden;
+  }
+  .custom-file-input::before {
+    content: 'Select a picture...';
+    color: white;
+    display: inline-block;
+    border: 1px solid rgb(209, 213, 219);
+    border-radius: 5px;
+    padding: 7px 10px;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    background-color: rgba(99, 102, 241); 
+  }
+  /* .custom-file-input:hover::before {
+    border-color: black;
+  } 
+  .custom-file-input:active::before {
+    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+  }*/
+
+.currentImage{
+  width: 20vw;
+}
+
+.detailimg{
+  width: 60vw;
+  margin: 0;
+  align-self: center;
+}
+
+.details{
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-around;
+}
+
+.btn-details{
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  justify-content: flex-end;
+}
