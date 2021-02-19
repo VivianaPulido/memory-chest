@@ -31,6 +31,7 @@ router.post('/create-memory',  uploadCloud.single('image'), async(req, res, next
   res.redirect('/profile')
 })
 
+<<<<<<< HEAD
 // //delete memories asi estaba antes
 // router.post('/delete/:id', async(req, res, nest)=> {
 //   const {id} = req.params
@@ -43,6 +44,11 @@ router.post('/create-memory',  uploadCloud.single('image'), async(req, res, next
 router.post('/delete/:id', async(req, res, nest)=> {
   const id = req.params.id
   //console.log("Este es el id que encuentra", id)
+=======
+//delete memories
+router.post('/delete/:id', async(req, res, nest)=> {
+  const {id} = req.params
+>>>>>>> 44cc949576f73bbead29b1fdd85684df75cfd79c
   const foundMemory= await Memory.findByIdAndDelete(id)
   res.redirect('/profile')
 })
@@ -74,6 +80,21 @@ router.post('/edit/:id', uploadCloud.single('image'), async(req, res, next) => {
 })
 
 
+<<<<<<< HEAD
+=======
+//get profile 
+router.get('/profile', async(req, res, next) => {
+  const userInSession= req.session.currentUser
+  console.log(req.sesseion)
+  const userId= req.session.currentUser._id
+  const foundUser= await User.findById(userId).populate('memories')
+  //console.log('esto es foundUser', foundUser)
+
+  res.render('profile', foundUser)
+})
+
+
+>>>>>>> 44cc949576f73bbead29b1fdd85684df75cfd79c
 //get ver detalles de las memories
 router.get('/detail/:id', async(req, res, next) => {
   const memory= req.params.id

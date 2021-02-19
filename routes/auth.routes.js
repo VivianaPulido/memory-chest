@@ -16,7 +16,11 @@ router.get('/signup', (re, res, next) => {
 //Ruta POST SIgnup (Procesa la info de la forma)
 router.post('/signup', async(req, res, next) => {
   const {username, email, password}= req.body
+<<<<<<< HEAD
   //console.log({username, email, password})
+=======
+  console.log({username, email, password})
+>>>>>>> 44cc949576f73bbead29b1fdd85684df75cfd79c
 
   if (!username || !email || !password) {
     res.render('auth/signup', { errorMessage: 'All fields are mandatory. Please provide your username, email and password.' });
@@ -35,13 +39,22 @@ router.post('/signup', async(req, res, next) => {
   const genSaltResult= await bcrypt.genSalt(saltRounds);
   const hashPassword= await bcrypt.hash(password, genSaltResult)
 
+<<<<<<< HEAD
   const user= await User.create({
+=======
+  await User.create({
+>>>>>>> 44cc949576f73bbead29b1fdd85684df75cfd79c
     username: username,
     password: hashPassword,
     email: email
   })
+<<<<<<< HEAD
   req.session.currentUser = user
   res.redirect('/profile')
+=======
+
+  await res.redirect('/profile')
+>>>>>>> 44cc949576f73bbead29b1fdd85684df75cfd79c
 }
 catch(error) {
   if (error instanceof mongoose.Error.ValidationError) {
@@ -89,6 +102,7 @@ router.post('/login', async (req, res, next) => {
   }
 })
 
+<<<<<<< HEAD
 //get profile 
 router.get('/profile', async(req, res, next) => {
   const userInSession= req.session.currentUser
@@ -100,6 +114,8 @@ router.get('/profile', async(req, res, next) => {
   res.render('profile', foundUser)
 })
 
+=======
+>>>>>>> 44cc949576f73bbead29b1fdd85684df75cfd79c
 
 //Post logout
 router.post('/logout', (req, res) => {
