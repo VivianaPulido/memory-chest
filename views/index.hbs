@@ -1,9 +1,62 @@
 
 <div id='landing'>
-<h1 class="titleshadow font-extrabold text-white text-xl sm:text-7xl md:text-9xl text-center py-40 ">Memory Chest</h1>
+{{!-- <h1 class="titleshadow font-extrabold text-white text-xl sm:text-7xl md:text-9xl text-center py-40 ">Memory Chest</h1> --}}
+<img src="../images/mc-logo.png" class="lanimage"/>
+<p class="text-white sm:text-3xl">Keep your memories alive</p>
 </div>
-   
 
 
-   {{!-- <div class="absolute left-0 bottom-0 w-full h-full z-10"
-          style="background-image: linear-gradient(180deg,transparent,rgba(0,0,0,.7));"></div> --}}
+<div class="pitch">
+   <p class="px-28 py-36 text-white text-2xl text-center">Memories, even the dearest ones, fade over time in our heads...<br>
+      Be it the recipe of your favorite aunt, the revolution tales you heard from Granma, the name of your first pet, the games you invented as a kid, or the crazy dream you had last night.<br>
+      Keep those memories alive! Store them in Memory Chest. 
+   </p>
+</div>
+ 
+
+
+<div class="carousel">
+    <div class="carousel-inner">
+        <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked">
+        <div class="carousel-item">
+            <img src="../images/granma-story.png"/>
+            <h3 class="piecarrusel px-7 pb-10 pt-2 text-white text-3xl">Keep those exciting stories Granma used to tell</h3>
+        </div>
+        <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
+        <div class="carousel-item">
+            <img src="../images/time-capsule.png"/>
+            <h3 class="piecarrusel px-7 pb-10 pt-2 text-white text-3xl">Maybe create a Time capsule for your children</h3>
+        </div>
+        <input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="">
+        <div class="carousel-item">
+            <img src="../images/adventure1.png"/>
+            <h3 class="piecarrusel px-7 pb-10 pt-2 text-white text-3xl">Preserve interesting anecdotes of your adventures</h3>
+        </div>
+        <label for="carousel-3" class="carousel-control prev control-1">‹</label>
+        <label for="carousel-2" class="carousel-control next control-1">›</label>
+        <label for="carousel-1" class="carousel-control prev control-2">‹</label>
+        <label for="carousel-3" class="carousel-control next control-2">›</label>
+        <label for="carousel-2" class="carousel-control prev control-3">‹</label>
+        <label for="carousel-1" class="carousel-control next control-3">›</label>
+        <ol class="carousel-indicators">
+            <li>
+                <label for="carousel-1" class="carousel-bullet">•</label>
+            </li>
+            <li>
+                <label for="carousel-2" class="carousel-bullet">•</label>
+            </li>
+            <li>
+                <label for="carousel-3" class="carousel-bullet">•</label>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="registerdown">
+
+   <p>Ready to begin?</p>
+   <div class="btn-details mx-12">
+    <a href="/signup" class="mx-2 px-3 py-2 text-white bg-indigo-500 rounded-md focus:bg-indigo-600 focus:outline-none">Create an Account</a>
+   </div>
+
+</div>

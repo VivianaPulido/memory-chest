@@ -1,5 +1,5 @@
 {{!-- {{#if foundUser}} --}}
-
+<div class="px-10">
 <div class="profileHead">
 <h1 class="text-xl">{{this.username}}'s Memories</h1>
 <a href="/create-memory" class="px-3 py-4 text-white bg-indigo-500 rounded-md focus:bg-indigo-600 focus:outline-none">Create a Memory</a>
@@ -12,7 +12,7 @@
   {{#each this.memories}}
       <div class="bg-gray-900 shadow-lg rounded p-3 m-5">
         <div class="group relative">
-          <img class="w-full md:w-72 block rounded" src="{{imgPath}}" alt="Picture"/>
+          <img class="w-full block rounded" src="{{imgPath}}" alt="Picture"/>
           <a href="/detail/{{id}}" class="m-2 text-center text-white text-lg"><h3>{{title}}</h3></a>
 
           <div class="p-2 h-full top-0 flex items-center justify-evenly">
@@ -32,10 +32,6 @@
   </div>  
 </main>
 
+</div>
 
-
-{{!-- {{/if}} --}}
-
-{{!-- {{#unless userInSession}}
-To create Memories please register or login.
-{{/unless}} --}}
+{{!-- md:w-72 --en imagen esta propiedad hacia extraños..}}
